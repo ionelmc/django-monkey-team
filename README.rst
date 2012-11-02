@@ -37,7 +37,8 @@ Requirements
 
 PyCrypto is required.
 
-Known to work on Django 1.4 / Python 2.7
+The project has been tested on Django 1.3, 1.4 and trunk with Python 2.6 and
+2.7.
 
 |status|_
 
