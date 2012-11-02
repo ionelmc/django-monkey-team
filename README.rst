@@ -35,8 +35,9 @@ Change your Django project settings to have::
 Requirements
 ============
 
-The project has been tested on Django 1.1, 1.2, 1.3, 1.4 and trunk with Python
-2.6 and 2.7.
+PyCrypto is required.
+
+Known to work on Django 1.4 / Python 2.7
 
 |status|_
 
