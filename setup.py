@@ -14,6 +14,7 @@ setup(
     author = 'Ionel Cristian Mărieș',
     author_email = 'contact@ionelmc.ro',
     packages = find_packages('src'),
+    package_dir = {'':'src'},
     include_package_data = True,
     zip_safe = False,
     classifiers = [
