@@ -1,5 +1,4 @@
 import hashlib
-import codecs
 import os
 
 from django.conf import settings
@@ -54,6 +53,7 @@ class Setup(object):
         module_name = "setup"
         verbose_name_plural = "Setup"
         verbose_name = "Setup"
+        swapped = False
 
 class classproperty(property):
     def __get__(self, cls, owner):
@@ -75,7 +75,7 @@ class MonkeySetup(admin.ModelAdmin):
 
         urlpatterns = patterns('',
             url(r'^$', wrap(self.setup_view), name='%s_%s_changelist' % info),
-            url(r'^monkey-team-%s.user.js$' % self.client_key,
+            url(r'^monkey-team.user.js$',
                 wrap(self.userscript_view), name='monkey_team_userscript'),
             url(r'^test/$',
                 wrap(self.test_view), name='monkey_team_test'),
@@ -98,10 +98,12 @@ class MonkeySetup(admin.ModelAdmin):
         raise Exception("Relax, it's just a test ...")
 
     def userscript_view(self, request):
-        return HttpResponse(
-            codecs.BOM_UTF8 + self.get_userscript_code(request),
+        response = HttpResponse(
+            self.get_userscript_code(request),
             mimetype='application/javascript'
         )
+        response['Content-Disposition'] = 'attachment; filename="monkey-team-%s.user.js"' % self.client_key
+        return response
 
     @classmethod
     def get_userscript_code(cls, request):
