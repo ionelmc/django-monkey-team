@@ -40,7 +40,6 @@ PyCrypto is required.
 The project has been tested on Django 1.3, 1.4 and trunk with Python 2.6 and
 2.7.
 
-|status|_
-
-.. |status| image:: http://travis-ci.org/ionelmc/django-monkey-team.png
-.. _status: http://travis-ci.org/ionelmc/django-monkey-team
+.. image:: https://secure.travis-ci.org/ionelmc/django-monkey-team.png
+    :alt: Build Status
+    :target: http://travis-ci.org/ionelmc/django-monkey-team
