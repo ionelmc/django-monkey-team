@@ -1,0 +1,13 @@
+{% spaceless %}<html><!-- {{ client_key }} --><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>500 Internal Server Error</title>
+</head>
+<body>
+<h1>500 Internal Server Error</h1>
+<p>Sorry, something went wrong.<br><br>A team of highly trained monkeys has been dispatched to deal with this situation.</p>
+If you see them, show them this information:<br>
+<pre>{{ data }}</pre>
+{% if extra %}
+    <script>{{ extra }}</script>
+{% endif %}
+</body></html>{% endspaceless %}
