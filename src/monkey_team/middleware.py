@@ -5,10 +5,12 @@ from Crypto.Cipher import AES
 
 from django.views.debug import technical_500_response
 from django.template.loader import render_to_string
+from django.conf import settings
 
 from .admin import MonkeySetup
 
 BLOCK_SIZE = 16
+MONKEY_FORCE_ACTIVE = getattr(settings, "MONKEY_FORCE_ACTIVE", False)
 pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
 unpad = lambda s : s[0:-ord(s[-1])]
 
@@ -32,10 +34,11 @@ class MonkeyTeamMiddleware(object):
         })
 
     def process_exception(self, request, exception):
-        exc_info = sys.exc_info()
-        if exc_info:
-            response = technical_500_response(request, *exc_info)
-        else:
-            response = technical_500_response(request, type(exception), exception, None)
-        self.patch_response(request, response)
-        return response
+        if not settings.DEBUG or MONKEY_FORCE_ACTIVE:
+            exc_info = sys.exc_info()
+            if exc_info:
+                response = technical_500_response(request, *exc_info)
+            else:
+                response = technical_500_response(request, type(exception), exception, None)
+            self.patch_response(request, response)
+            return response

@@ -29,11 +29,6 @@
       <br>
     {% endif %}
 
-    {% if warn_debug %}
-      <h1 class="errornote">Highly trained monkeys do not have <em>DEBUG = True</em> in their settings !</h1>
-      <br>
-    {% endif %}
-
     <h2>Install the userscript from <a href="{{ userscript_url }}">here</a>.</h2>
 
     <h3>Dependencies</h3>
@@ -42,8 +37,13 @@
         <li>Google Chrome: Download the userscript and then drag and drop it in the extensions tab. Walkthrough <a href="{% get_static_prefix %}monkey_team/google-chrome.png">here</a>.</li>
       </ul>
 
+    <br>
+    {% if warn_debug %}
+      <h1 class="errornote">Highly trained monkeys do not have <em>DEBUG = True</em> in their settings ! If you want to test this with <em>DEBUG = True</em> then set <em>MONKEY_FORCE_ACTIVE = True</em></h1>
+      <del>
+    {% endif %}
     <h2>Now test the user script on <a href="{{ test_url }}">this test page</a>.</h2>
-
+    {% if warn_debug %}</del>{% endif %}
 
   </div>
 {% endblock %}
