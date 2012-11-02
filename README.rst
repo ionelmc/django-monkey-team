@@ -10,9 +10,11 @@ encrypt the traceback. The decode key is a hash of your SECRET_KEY.
 Google Chrome and Firefox are supported. If you want to use something else you
 have to find a way to install the userscript yourself.
 
-It looks like this: |monkey-dispatch|
+It looks like this:
 
-.. |monkey-dispatch| image:: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
+.. image:: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
+    :alt: Sample error page
+    :target: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
 
 Installation guide
 ==================
@@ -30,7 +32,13 @@ Change your Django project settings to have::
         'monkey_team.middleware.MonkeyTeamMiddleware',
     )
 
+The go to django admin and install the userscript. The setup page looks like
+this:
 
+
+.. image:: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-admin.png
+    :alt: Userscript install page
+    :target: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-admin.png
 
 Requirements
 ============
