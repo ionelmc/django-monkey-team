@@ -1,6 +1,9 @@
 from django.test.client import Client
 from django.test import TestCase
 from django.contrib.auth.models import User
+from django.conf import settings
+
+from monkey_team.admin import TestException
 
 class MonkeyTeamTestCase(TestCase):
     def setUp(self):
@@ -34,6 +37,17 @@ class MonkeyTeamTestCase(TestCase):
     def test_admin_monkey_test(self):
         response = self.client.get('/admin/monkey_team/setup/test/')
         self.assertContains(response, "A team of highly trained monkeys has been dispatched to deal with this situation.", status_code=500)
+
+    def test_admin_monkey_test_debug(self):
+        settings.DEBUG = True
+        self.assertRaises(TestException, self.client.get, '/admin/monkey_team/setup/test/')
+        settings.DEBUG = False
+
+    def test_admin_monkey_setup_debug(self):
+        settings.DEBUG = True
+        response = self.client.get('/admin/monkey_team/setup/')
+        self.assertContains(response, "Highly trained monkeys do not have")
+        settings.DEBUG = False
 
     def test_admin_userscript_generate(self):
         response = self.client.get('/admin/monkey_team/setup/monkey-team.user.js')

@@ -46,6 +46,8 @@ if (document.documentElement.outerHTML.indexOf(CLIENT_KEY) > 0) {
 }
 """
 
+class TestException(Exception): pass
+
 class Setup(object):
     class _meta:
         abstract = False
@@ -95,7 +97,7 @@ class MonkeySetup(admin.ModelAdmin):
         ).digest()
 
     def test_view(self, request):
-        raise Exception("Relax, it's just a test ...")
+        raise TestException("Relax, it's just a test ...")
 
     def userscript_view(self, request):
         response = HttpResponse(
