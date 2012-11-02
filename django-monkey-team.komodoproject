@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="0330003f-2c36-4d6a-8c25-897d89ea6ecc" kpf_version="5" name="django-monkey-team.komodoproject">
+<preference-set idref="0330003f-2c36-4d6a-8c25-897d89ea6ecc">
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__;django_project_template;.tox</string>
+  <string id="import_include_matches"></string>
+  <string relative="path" id="last_local_directory"></string>
+</preference-set>
 </project>
