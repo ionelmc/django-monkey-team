@@ -1,0 +1,49 @@
+{% extends "admin/base_site.html" %}
+{% load static i18n %}
+{% load url from future %}
+
+{% block bodyclass %}change-list{% endblock %}
+
+{% if not is_popup %}
+  {% block breadcrumbs %}
+    <div class="breadcrumbs">
+      <a href="../../">
+        {% trans "Home" %}
+      </a>
+       &rsaquo;
+       <a href="../">
+         {% trans "Monkey Team" %}
+      </a>
+      &rsaquo;
+        {% trans "Setup" %}
+    </div>
+  {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    {% if warn_middleware %}
+      <h1 class="errornote">You do not have 'monkey_team.middleware.MonkeyTeamMiddleware' in setting's MIDDLEWARE_CLASSES !</h1>
+      <br>
+    {% endif %}
+
+    {% if warn_debug %}
+      <h1 class="errornote">Highly trained monkeys do not have <em>DEBUG = True</em> in their settings !</h1>
+      <br>
+    {% endif %}
+
+    <h2>Install the userscript from <a href="{{ userscript_url }}">here</a>.</h2>
+
+    <h3>Dependencies</h3>
+      <ul>
+        <li>Firefox: Install <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">greasemonkey</a>.</li>
+        <li>Google Chrome: Download the userscript and then drag and drop it in the extensions tab. Walkthrough <a href="{% get_static_prefix %}monkey_team/google-chrome.png">here</a>.</li>
+      </ul>
+
+    <h2>Now test the user script on <a href="{{ test_url }}">this test page</a>.</h2>
+
+
+  </div>
+{% endblock %}

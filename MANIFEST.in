@@ -1,0 +1,7 @@
+include README.rst
+include LICENSE
+include README
+include src/monkey_team/aes.js
+recursive-include src/monkey_team/static *
+recursive-include src/monkey_team/templates *
+recursive-include tests *
