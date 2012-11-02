@@ -12,7 +12,7 @@ have to find a way to install the userscript yourself.
 
 It looks like this: |monkey-dispatch|
 
-.. |monkey-dispatch| image:: docs/monkey-dispatch.png
+.. |monkey-dispatch| image:: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
 
 Installation guide
 ==================
