@@ -7,7 +7,7 @@ from django.views.debug import technical_500_response
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from .admin import MonkeySetup
+from .utils import get_decode_key, get_client_key
 
 BLOCK_SIZE = 16
 MONKEY_FORCE_ACTIVE = getattr(settings, "MONKEY_FORCE_ACTIVE", False)
@@ -20,10 +20,10 @@ class MonkeyTeamMiddleware(object):
     def patch_response(request, response):
         iv = os.urandom(16)
         response.content = render_to_string("monkey_500.html", {
-            'client_key': MonkeySetup.client_key,
+            'client_key': get_client_key(),
             'data': (
                 iv + AES.new(
-                    MonkeySetup.decode_key,
+                    get_decode_key(),
                     AES.MODE_CBC,
                     iv,
                 ).encrypt(

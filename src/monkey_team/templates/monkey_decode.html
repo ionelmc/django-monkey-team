@@ -1,0 +1,47 @@
+{% extends "admin/change_form.html" %}
+{% load static i18n %}
+{% load url from future %}
+
+{% if not is_popup %}
+  {% block breadcrumbs %}
+    <div class="breadcrumbs">
+      <a href="../../">
+        {% trans "Home" %}
+      </a>
+       &rsaquo;
+       <a href="../">
+         {% trans "Monkey Team" %}
+      </a>
+      &rsaquo;
+        {% trans "Decode" %}
+    </div>
+  {% endblock %}
+{% endif %}
+
+
+{% block content %}
+  <div id="content-main">
+    <form id="decode_form" method="post" action="" enctype="multipart/form-data">
+        <div style="display:none">{% csrf_token %}</div>
+        <div>
+            <fieldset class="module aligned">
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                <div class="form-row"><div>
+                    {{ field.errors }}
+                    {% if field.field.required %}
+                        <strong class="required">{{ field.label_tag }}</strong>
+                    {% else %}
+                        {{ field.label_tag }}
+                    {% endif %}
+                    {{ field }}
+                </div></div>
+            {% endfor %}
+            </fieldset>
+            <div class="submit-row">
+                <input class="default" type="submit" name="_decode" value="Decode">
+            </div>
+        </div>
+    </form>
+  </div>
+{% endblock %}
