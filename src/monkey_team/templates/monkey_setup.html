@@ -39,7 +39,11 @@
 
     <br>
     {% if warn_debug %}
-      <h1 class="errornote">Highly trained monkeys do not have <em>DEBUG = True</em> in their settings ! If you want to test this with <em>DEBUG = True</em> then set <em>MONKEY_FORCE_ACTIVE = True</em></h1>
+      <h1 class="errornote">
+        Highly trained monkeys do not have <em>DEBUG = True</em> in their settings !
+        <br>
+        If you want to test this with <em>DEBUG = True</em> then set <em>MONKEY_FORCE_ACTIVE = True</em>
+      </h1>
       <del>
     {% endif %}
     <h2>Now test the user script on <a href="{{ test_url }}">this test page</a>.</h2>
