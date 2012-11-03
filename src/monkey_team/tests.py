@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.conf import settings
 
-from monkey_team.admin import TestException
+from monkey_team.views import TestException
 
 class MonkeyTeamTestCase(TestCase):
     def setUp(self):
