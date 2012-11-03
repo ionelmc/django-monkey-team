@@ -1,9 +1,11 @@
+from Crypto.Cipher import AES
+
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 
-from .utils import get_client_key, get_userscript_code
+from .utils import get_client_key, get_userscript_code, get_decode_key
 from .forms import DecodeForm
 
 class TestException(Exception):
@@ -32,7 +34,18 @@ def decode(request):
     if request.method == "POST":
         form = DecodeForm(request.POST)
         if form.is_valid():
-            return TODO
+            message = form.cleaned_data['message']
+            optional_decode_key = form.cleaned_data['optional_decode_key']
+            decode_key = optional_decode_key or get_decode_key()
+            return HttpResponse(
+                AES.new(
+                    decode_key,
+                    AES.MODE_CBC,
+                    message[:16],
+                ).decrypt(
+                    message[16:]
+                )
+            )
     else:
         form = DecodeForm()
     return render(request, "monkey_decode.html", {
