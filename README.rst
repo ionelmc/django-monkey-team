@@ -38,7 +38,7 @@ Change your Django project settings to have::
     )
     DEBUG = False
 
-Note, that if you want `DEBUG = True` and still have the middleware on you need to set::
+Note, that if you want ``DEBUG = True`` and still have the middleware on you need to set::
 
     MONKEY_FORCE_ACTIVE = True
 
