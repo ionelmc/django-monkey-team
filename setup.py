@@ -5,7 +5,7 @@ import os
 
 setup(
     name = "django-monkey-team",
-    version = "0.1",
+    version = "0.2",
     url = 'https://github.com/ionelmc/django-prefetch',
     download_url = '',
     license = 'BSD',
