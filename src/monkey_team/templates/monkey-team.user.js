@@ -1,4 +1,3 @@
-
 // ==UserScript==
 // @name        MonkeyTeam error response decode script for {{ site_name }}
 // @include     http*
@@ -9,7 +8,9 @@ var CLIENT_KEY = "{{ client_key }}";
 var DECODE_KEY = "{{ decode_key }}";
 
 if (document.documentElement.outerHTML.indexOf(CLIENT_KEY) > 0) {
+    {% autoescape off %}
     {{ lib_code }}
+    {% endautoescape %}
 
     var pre = document.body.getElementsByTagName('pre')[0];
     var data = CryptoJS.enc.Base64.parse(pre.textContent);
