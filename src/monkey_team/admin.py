@@ -1,4 +1,7 @@
-from django.conf.urls.defaults import patterns, url
+try:
+    from django.conf.urls import patterns, url
+except ImportError:
+    from django.conf.urls.defaults import patterns, url
 from .utils import make_admin_class
 
 make_admin_class("Setup", patterns("monkey_team.views",
@@ -11,9 +14,3 @@ make_admin_class("Setup", patterns("monkey_team.views",
 make_admin_class("Decode", patterns("monkey_team.views",
     url(r'^$', 'decode', name='monkey_team_decode_changelist'),
 ))
-
-
-
-
-
-

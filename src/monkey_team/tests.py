@@ -46,6 +46,7 @@ class MonkeyTeamTestCase(TestCase):
     def test_admin_monkey_setup_debug(self):
         settings.DEBUG = True
         response = self.client.get('/admin/monkey_team/setup/')
+        self.assertEqual(response.status_code, 200, response)
         self.assertContains(response, "Highly trained monkeys do not have")
         settings.DEBUG = False
 

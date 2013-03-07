@@ -2,8 +2,11 @@ import hashlib
 import os
 from django.conf import settings
 from django.template import RequestContext
-from django.conf.urls.defaults import patterns
-from django.utils.functional import update_wrapper
+try:
+    from django.conf.urls import patterns
+except ImportError:
+    from django.conf.urls.defaults import patterns
+from functools import update_wrapper
 from django.template.loader import render_to_string
 from django.contrib import admin
 
@@ -17,6 +20,8 @@ def make_admin_class(name, urls, app_label="monkey_team", dont_register=False):
         module_name = name.lower()
         verbose_name_plural = name
         verbose_name = name
+        model_name = name.lower()
+        object_name = name
         swapped = False
     model_class = type(name, (object,), {'_meta': _meta})
 
