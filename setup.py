@@ -6,7 +6,7 @@ import os
 setup(
     name = "django-monkey-team",
     version = "0.2.1",
-    url = 'https://github.com/ionelmc/django-prefetch',
+    url = 'https://github.com/ionelmc/django-monkey-team',
     download_url = '',
     license = 'BSD',
     description = "Django middleware that displays debug tracebacks on production sites (where you would have `DEBUG = False`) only to developers.",
@@ -25,6 +25,10 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 2 :: Only',
+        'Programming Language :: Python :: Implementation :: CPython',
     ],
     install_requires=[
         'PyCrypto',
