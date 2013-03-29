@@ -33,5 +33,6 @@ setup(
     install_requires=[
         'PyCrypto',
         'Django>=1.3',
+        'django-admin-utils>=0.1.2',
     ]
 )
