@@ -2,7 +2,7 @@ try:
     from django.conf.urls import patterns, url
 except ImportError:
     from django.conf.urls.defaults import patterns, url
-from admin_tools import make_admin_class
+from admin_utils import make_admin_class
 
 make_admin_class("Setup", patterns("monkey_team.views",
     url(r'^$', 'setup', name='monkey_team_setup_changelist'),
