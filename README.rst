@@ -28,7 +28,9 @@ Install it::
 
     pip install django-monkey-team
 
-Change your Django project settings to have::
+Change your Django project settings to have:
+
+.. code-block:: python
 
     INSTALLED_APPS += (
         'monkey_team',
@@ -38,7 +40,9 @@ Change your Django project settings to have::
     )
     DEBUG = False
 
-Note, that if you want ``DEBUG = True`` and still have the middleware on you need to set::
+Note, that if you want ``DEBUG = True`` and still have the middleware on you need to set:
+
+.. code-block:: python
 
     MONKEY_FORCE_ACTIVE = True
 
