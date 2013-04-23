@@ -65,3 +65,7 @@ The project has been tested on Django 1.3, 1.4, 1.5 and trunk with Python 2.6 an
 .. image:: https://secure.travis-ci.org/ionelmc/django-monkey-team.png
     :alt: Build Status
     :target: http://travis-ci.org/ionelmc/django-monkey-team
+
+.. image:: https://coveralls.io/repos/ionelmc/django-monkey-team/badge.png?branch=master
+    :alt: Coverage Status
+    :target: https://coveralls.io/r/ionelmc/django-monkey-team
