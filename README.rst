@@ -69,3 +69,9 @@ The project has been tested on Django 1.3, 1.4, 1.5 and trunk with Python 2.6 an
 .. image:: https://coveralls.io/repos/ionelmc/django-monkey-team/badge.png?branch=master
     :alt: Coverage Status
     :target: https://coveralls.io/r/ionelmc/django-monkey-team
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/ionelmc/django-monkey-team/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
