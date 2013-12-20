@@ -2,6 +2,18 @@
     django-monkey-team
 ===========================
 
+.. image:: https://secure.travis-ci.org/ionelmc/django-monkey-team.png
+    :alt: Build Status
+    :target: http://travis-ci.org/ionelmc/django-monkey-team
+
+.. image:: https://coveralls.io/repos/ionelmc/django-monkey-team/badge.png?branch=master
+    :alt: Coverage Status
+    :target: https://coveralls.io/r/ionelmc/django-monkey-team
+
+.. image:: https://badge.fury.io/py/django-monkey-team.png
+    :alt: PYPI Package
+    :target: https://pypi.python.org/pypi/django-monkey-team
+
 This is a middleware that displays debug tracebacks on production sites (where
 you would have `DEBUG = False`) only to developers. Developers have to install a
 special userscript to decode the traceback data. AES-256 (CBC mode) is used to
@@ -20,6 +32,7 @@ The error page and decrypt flow looks like this:
 .. image:: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
     :alt: Sample error page
     :target: https://github.com/ionelmc/django-monkey-team/raw/master/docs/monkey-dispatch.png
+
 
 Installation guide
 ==================
@@ -61,15 +74,6 @@ PyCrypto is required.
 
 The project has been tested on Django 1.3, 1.4, 1.5 and trunk with Python 2.6 and
 2.7.
-
-.. image:: https://secure.travis-ci.org/ionelmc/django-monkey-team.png
-    :alt: Build Status
-    :target: http://travis-ci.org/ionelmc/django-monkey-team
-
-.. image:: https://coveralls.io/repos/ionelmc/django-monkey-team/badge.png?branch=master
-    :alt: Coverage Status
-    :target: https://coveralls.io/r/ionelmc/django-monkey-team
-
 
 .. image:: https://d2weczhvl823v0.cloudfront.net/ionelmc/django-monkey-team/trend.png
    :alt: Bitdeli badge
