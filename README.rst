@@ -70,12 +70,6 @@ this:
 Requirements
 ============
 
-PyCrypto is required.
-
-The project has been tested on Django 1.3, 1.4, 1.5 and trunk with Python 2.6 and
-2.7.
-
-.. image:: https://d2weczhvl823v0.cloudfront.net/ionelmc/django-monkey-team/trend.png
-   :alt: Bitdeli badge
-   :target: https://bitdeli.com/free
-
+:OS: Any
+:Runtime: Python 2.6, 2.7
+:Packages: PyCrypto, Django>=1.3 (up to 1.6)
